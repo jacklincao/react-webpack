@@ -1,10 +1,15 @@
+import './common'
+
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { App } from './app'
+import { AppContainer } from 'react-hot-loader'
 
 const render = (Component) => {
   ReactDOM.render(
-    <Component />,
+    <AppContainer>
+      <Component />
+    </AppContainer>,
     document.getElementById('root')
   )
 }
@@ -12,3 +17,10 @@ const render = (Component) => {
 document.addEventListener('DOMContentLoaded', () => {
   render(App)
 })
+
+if(module.hot) {
+  module.hot.accept('./', () => {
+    const newApp = require('./app').App
+    render(newApp)
+  })
+}

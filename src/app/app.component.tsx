@@ -1,6 +1,10 @@
 import * as React from 'react'
 
-export class App extends React.Component {
+interface AppProps {
+  userId: string
+}
+
+export class App extends React.Component<AppProps> {
   constructor(props) {
     super(props)
   }
