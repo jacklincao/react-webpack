@@ -1,17 +1,21 @@
 import * as React from 'react'
+import { Home } from './modules/home'
 
-interface AppProps {
-  userId: string
+interface State {
+  asdfasd: number
 }
 
-export class App extends React.Component<AppProps> {
-  constructor(props) {
+export class App extends React.Component<{}, State> {
+
+  constructor(props: any) {
     super(props)
   }
 
   render() {
     return (
-      <div>Hello World!</div>
+      <div>
+        <Home />
+      </div>
     )
   }
 }
